@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
 {
+    [Header("General Setup Settings")]
     [SerializeField] float xFlyingSpeed = 25f;
     [SerializeField] float yFlyingSpeed = 20f;
     [SerializeField] float xRange = 15f;
     [SerializeField] float yRange = 8f;
 
+    [Header("Player Input based tuning")]
     [SerializeField] float pitchThrowFactor = -12f;
-    [SerializeField] float pitchPositionFactor = -2f;
     [SerializeField] float rollThrowFactor = -30f;
+
+    [Header("Position based tuning")]
+    [SerializeField] float pitchPositionFactor = -2f;
     [SerializeField] float yawPositionFactor = 1f;
+
+    [Tooltip("Modifies how fast the plane completes it's rotation.")]
     [SerializeField] float rotationFactor = 1f;
+
+    [SerializeField] GameObject [] lightWeapon;
 
     float yThrow;
     float xThrow;
@@ -29,6 +37,7 @@ public class PlayerControls : MonoBehaviour
     {
         CalculateTranslation();
         CalculateRotation();
+        ProcessFiring();
 
     }
 
@@ -58,4 +67,29 @@ public class PlayerControls : MonoBehaviour
         Quaternion targetRotation = Quaternion.Euler(pitch, yaw, roll);
         transform.localRotation = Quaternion.RotateTowards(transform.localRotation, targetRotation, rotationFactor);
     }
+
+    private void ProcessFiring()
+    {
+        if(Input.GetButton("Fire1"))
+        {
+            Debug.Log("Firing");
+            SetLightWeaponsActive(true);
+        }
+        else
+        {
+            Debug.Log("Not Firing");
+            SetLightWeaponsActive(false);
+        }
+    }
+
+    private void SetLightWeaponsActive(bool state)
+    {
+        foreach(GameObject item in lightWeapon)
+        {
+            var emissionModule = item.GetComponent<ParticleSystem>().emission;
+            emissionModule.enabled = state;
+        }
+    }
+
+    
 }
