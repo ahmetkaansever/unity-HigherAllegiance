@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1239,21 +1239,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2897584951684870905, guid: 2b058d4de38f645768c715691deb982b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2897584951684870906, guid: 2b058d4de38f645768c715691deb982b, type: 3}
-      propertyPath: rotationFactor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3863745255525819406, guid: 2b058d4de38f645768c715691deb982b, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5497388716509706041, guid: 2b058d4de38f645768c715691deb982b, type: 3}
       propertyPath: m_Name
       value: Player Rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497388716987571738, guid: 2b058d4de38f645768c715691deb982b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -30.79
       objectReference: {fileID: 0}
     - target: {fileID: 5497388717347324720, guid: 2b058d4de38f645768c715691deb982b, type: 3}
       propertyPath: m_RootOrder

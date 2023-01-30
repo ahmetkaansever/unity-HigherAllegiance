@@ -72,12 +72,10 @@ public class PlayerControls : MonoBehaviour
     {
         if(Input.GetButton("Fire1"))
         {
-            Debug.Log("Firing");
             SetLightWeaponsActive(true);
         }
         else
         {
-            Debug.Log("Not Firing");
             SetLightWeaponsActive(false);
         }
     }
@@ -91,5 +89,4 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
-    
 }
