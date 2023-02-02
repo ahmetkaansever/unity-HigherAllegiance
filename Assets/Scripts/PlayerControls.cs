@@ -7,8 +7,8 @@ public class PlayerControls : MonoBehaviour
     [Header("General Setup Settings")]
     [SerializeField] float xFlyingSpeed = 25f;
     [SerializeField] float yFlyingSpeed = 20f;
-    [SerializeField] float xRange = 15f;
-    [SerializeField] float yRange = 8f;
+    [SerializeField] float xRange = 20f;
+    [SerializeField] float yRange = 10f;
 
     [Header("Player Input based tuning")]
     [SerializeField] float pitchThrowFactor = -12f;
