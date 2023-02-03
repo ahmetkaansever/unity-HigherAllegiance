@@ -84,9 +84,11 @@ public class PlayerControls : MonoBehaviour
     {
         foreach(GameObject item in lightWeapon)
         {
-            var emissionModule = item.GetComponent<ParticleSystem>().emission;
-            emissionModule.enabled = state;
+            ParticleSystem particleSystem = item.GetComponent<ParticleSystem>();
+            var emission = particleSystem.emission;
+            emission.enabled = state;
         }
+        
     }
 
 }

@@ -20,6 +20,8 @@ public class Enemy : MonoBehaviour
     {
           scoreBoard = FindObjectOfType<ScoreBoard>();    
           collisionEvents = new List<ParticleCollisionEvent>(); 
+          Rigidbody rb = gameObject.AddComponent<Rigidbody>();
+          rb.useGravity = false;
     }
    private void OnParticleCollision(GameObject other) 
    {    
