@@ -6,39 +6,44 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject deathVFX;
     [SerializeField] GameObject lightHitVFX;
-    [SerializeField] Transform parent;
+    [SerializeField] GameObject terrain;
+    
     [SerializeField] int enemyWorth = 15;
     [SerializeField] int hitPoint = 100;
     [SerializeField] int damageDealt = 30;
     ScoreBoard scoreBoard;
 
     public List<ParticleCollisionEvent> collisionEvents;
-    
+    GameObject parent;
     
 
     void Start()
     {
+          if(this.tag == "Static Enemy")
+          {
+               Physics.IgnoreCollision(GetComponent<BoxCollider>(), terrain.GetComponent<TerrainCollider>());
+          }
           scoreBoard = FindObjectOfType<ScoreBoard>();    
           collisionEvents = new List<ParticleCollisionEvent>(); 
           Rigidbody rb = gameObject.AddComponent<Rigidbody>();
           rb.useGravity = false;
+          parent = GameObject.FindWithTag("RunTimeJunk");
     }
    private void OnParticleCollision(GameObject other) 
    {    
         int numberOfCollisions = ParticlePhysicsExtensions.GetCollisionEvents(other.GetComponent<ParticleSystem>(), this.gameObject, collisionEvents);
         ProcessHit(collisionEvents, numberOfCollisions);
-        if(hitPoint < 0)
+        if(hitPoint <= 0)
         {
             ProcessDestroy();
         }
-        
         
    }
 
    void ProcessDestroy()
    {
             GameObject vfx = Instantiate(deathVFX, transform.position, Quaternion.identity);
-            vfx.transform.parent = parent;
+            vfx.transform.parent = parent.transform;
             Destroy(gameObject);
    }
 
@@ -48,12 +53,13 @@ public class Enemy : MonoBehaviour
         while(i < numOfCollisions)
         {
           GameObject vfx = Instantiate(lightHitVFX, collisionEvents[i].intersection, Quaternion.LookRotation(collisionEvents[i].normal));
-          vfx.transform.parent = parent;
+          vfx.transform.parent = parent.transform;
           scoreBoard.IncreaseScore(enemyWorth * damageDealt);
           hitPoint = hitPoint - damageDealt;
           i++;
         }
         
    }
+
    
 }
