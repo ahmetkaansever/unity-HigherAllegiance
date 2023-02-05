@@ -413,7 +413,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3638881179468652382}
-  m_LocalRotation: {x: -0.25544983, y: -0.048753534, z: 0.18101948, w: 0.9484727}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 366.9, y: 40.6, z: -106.1}
   m_LocalScale: {x: 1.7282424, y: 1.7282424, z: 1.7282424}
   m_ConstrainProportionsScale: 0
@@ -430,7 +430,7 @@ Transform:
   - {fileID: 7666880448608392994}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -27.835, y: -12.074, z: 24.613}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4710213466640557605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,6 +445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100006, guid: a5f2c44d460aa584a925f955c093a24a, type: 3}
   lightHitVFX: {fileID: 4559021398028084413, guid: 77d9599b77e6d421789519aed84e233c, type: 3}
+  terrain: {fileID: 0}
   enemyWorth: 15
   hitPoint: 100
   damageDealt: 30
@@ -1013,6 +1014,7 @@ GameObject:
   - component: {fileID: 1155747803996457893}
   - component: {fileID: 7248204079168731871}
   - component: {fileID: 6187266773968946957}
+  - component: {fileID: 2442455630901590658}
   m_Layer: 0
   m_Name: blade
   m_TagString: Untagged
@@ -1085,6 +1087,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &2442455630901590658
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7819200405076260515}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d2a0f7cc58aeaa640b9f6b8af2d402ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &8394515457755823677
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5217098491575525016}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0.15207723}
   m_LocalScale: {x: 0.48719144, y: 0.48719144, z: 0.48719144}
   m_ConstrainProportionsScale: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ebbb4e189c64062409a89c811993b90d, type: 3}
+  - {fileID: 2100000, guid: 16ac5334bfde5ec4cbdabe9a1b4d6185, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,7 +95,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: ebbb4e189c64062409a89c811993b90d, type: 3}
 --- !u!1 &5217098491575525018
@@ -108,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5217098491575288506}
   - component: {fileID: 5217098491252328021}
+  - component: {fileID: 1447557223}
   m_Layer: 0
   m_Name: Heavy
   m_TagString: Untagged
@@ -147,9 +148,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100006, guid: a5f2c44d460aa584a925f955c093a24a, type: 3}
   lightHitVFX: {fileID: 4559021398028084413, guid: 77d9599b77e6d421789519aed84e233c, type: 3}
+  terrain: {fileID: 0}
   enemyWorth: 15
   hitPoint: 500
   damageDealt: 30
+--- !u!95 &1447557223
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5217098491575525018}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &5217098491575525020
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +197,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5217098491575525020}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.3957417, y: 0.18133011, z: 2.4491484}
   m_LocalScale: {x: 0.48719144, y: 0.48719144, z: 0.48719144}
   m_ConstrainProportionsScale: 0
@@ -258,7 +280,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5217098491575525022}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.396308, y: 0.17880213, z: 2.4564047}
   m_LocalScale: {x: 0.48719144, y: 0.48719144, z: 0.48719144}
   m_ConstrainProportionsScale: 0
