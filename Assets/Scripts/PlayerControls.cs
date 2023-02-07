@@ -21,8 +21,6 @@ public class PlayerControls : MonoBehaviour
     [Tooltip("Modifies how fast the plane completes it's rotation.")]
     [SerializeField] float rotationFactor = 1f;
 
-    [SerializeField] GameObject [] lightWeapon;
-
     float yThrow;
     float xThrow;
 
@@ -37,7 +35,6 @@ public class PlayerControls : MonoBehaviour
     {
         CalculateTranslation();
         CalculateRotation();
-        ProcessFiring();
 
     }
 
@@ -67,28 +64,4 @@ public class PlayerControls : MonoBehaviour
         Quaternion targetRotation = Quaternion.Euler(pitch, yaw, roll);
         transform.localRotation = Quaternion.RotateTowards(transform.localRotation, targetRotation, rotationFactor);
     }
-
-    private void ProcessFiring()
-    {
-        if(Input.GetButton("Fire1"))
-        {
-            SetLightWeaponsActive(true);
-        }
-        else
-        {
-            SetLightWeaponsActive(false);
-        }
-    }
-
-    private void SetLightWeaponsActive(bool state)
-    {
-        foreach(GameObject item in lightWeapon)
-        {
-            ParticleSystem particleSystem = item.GetComponent<ParticleSystem>();
-            var emission = particleSystem.emission;
-            emission.enabled = state;
-        }
-        
-    }
-
 }

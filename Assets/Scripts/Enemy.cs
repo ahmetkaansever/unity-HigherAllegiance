@@ -10,7 +10,8 @@ public class Enemy : MonoBehaviour
     
     [SerializeField] int enemyWorth = 15;
     [SerializeField] int hitPoint = 100;
-    [SerializeField] int damageDealt = 30;
+
+    int damageDealt;
     ScoreBoard scoreBoard;
 
     public List<ParticleCollisionEvent> collisionEvents;
@@ -31,7 +32,17 @@ public class Enemy : MonoBehaviour
     }
    private void OnParticleCollision(GameObject other) 
    {    
-        int numberOfCollisions = ParticlePhysicsExtensions.GetCollisionEvents(other.GetComponent<ParticleSystem>(), this.gameObject, collisionEvents);
+        
+        if(other.tag == "HeavyWeapon")
+        {
+          damageDealt = 100;
+        }
+        else if(other.tag == "LightWeapon")
+        {
+          damageDealt = 30;
+        }
+        ParticleSystem hitParticle = other.GetComponent<ParticleSystem>();
+        int numberOfCollisions = ParticlePhysicsExtensions.GetCollisionEvents(hitParticle, this.gameObject, collisionEvents);
         ProcessHit(collisionEvents, numberOfCollisions);
         if(hitPoint <= 0)
         {
