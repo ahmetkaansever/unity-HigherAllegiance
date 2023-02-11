@@ -21,13 +21,16 @@ public class PlayerControls : MonoBehaviour
     [Tooltip("Modifies how fast the plane completes it's rotation.")]
     [SerializeField] float rotationFactor = 1f;
 
+    [SerializeField] AudioSource propellerSound;
+    
+
     float yThrow;
     float xThrow;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        propellerSound.Play();
     }
 
     // Update is called once per frame

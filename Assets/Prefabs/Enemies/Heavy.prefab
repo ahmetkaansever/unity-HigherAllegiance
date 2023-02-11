@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 1447557223}
   m_Layer: 0
   m_Name: Heavy
-  m_TagString: Untagged
+  m_TagString: HeavyEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   terrain: {fileID: 0}
   enemyWorth: 15
   hitPoint: 500
-  damageDealt: 30
+  deathSound: {fileID: 8300000, guid: d3247579c549643a5b3a95f9224eaf3c, type: 3}
 --- !u!95 &1447557223
 Animator:
   serializedVersion: 5

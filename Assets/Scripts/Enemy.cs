@@ -6,10 +6,15 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject deathVFX;
     [SerializeField] GameObject lightHitVFX;
+    [SerializeField] GameObject tankDeathVFX;
+    [SerializeField] GameObject destroyedTank;
     [SerializeField] GameObject terrain;
     
     [SerializeField] int enemyWorth = 15;
     [SerializeField] int hitPoint = 100;
+
+    [SerializeField] AudioSource deathSound;
+    [SerializeField] float volume = 0.5f;
 
     int damageDealt;
     ScoreBoard scoreBoard;
@@ -20,7 +25,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-          if(this.tag == "Static Enemy")
+          if(this.tag == "Static Enemy" || this.tag == "Tank")
           {
                Physics.IgnoreCollision(GetComponent<BoxCollider>(), terrain.GetComponent<TerrainCollider>());
           }
@@ -52,10 +57,37 @@ public class Enemy : MonoBehaviour
    }
 
    void ProcessDestroy()
-   {
-            GameObject vfx = Instantiate(deathVFX, transform.position, Quaternion.identity);
-            vfx.transform.parent = parent.transform;
-            Destroy(gameObject);
+   {          
+            GameObject vfxTank;
+            GameObject vfxNormal;
+            GameObject tankProp;
+            if(this.tag == "Tank"){
+                vfxTank = Instantiate(tankDeathVFX, transform.position + Vector3.up, Quaternion.identity);
+                tankProp = Instantiate(destroyedTank, transform.position, transform.rotation);
+                tankProp.transform.parent = parent.transform;
+            }
+            
+            vfxNormal = Instantiate(deathVFX, transform.position, Quaternion.identity);
+                if(this.tag == "HeavyEnemy"){
+                    vfxNormal.transform.localScale = this.transform.localScale;
+                }
+            
+            vfxNormal.transform.parent = parent.transform;
+
+            deathSound.volume = Random.Range(0.90f * volume, 1.1f * volume);
+            deathSound.pitch = Random.Range(0.90f, 1.05f);
+            if(this.tag == "HeavyEnemy"){
+              deathSound.volume = Random.Range(1.90f * volume, 2.10f * volume);
+            }
+            deathSound.Play();
+
+            foreach (Renderer r in GetComponentsInChildren<Renderer>()){
+                r.enabled = false;
+            }
+            foreach (Collider c in GetComponentsInChildren<Collider>()){
+                c.enabled = false;
+            }
+            Destroy(gameObject, 4f);
    }
 
    void ProcessHit(List<ParticleCollisionEvent> collisions, int numOfCollisions)

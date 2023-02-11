@@ -132,9 +132,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100006, guid: a5f2c44d460aa584a925f955c093a24a, type: 3}
   lightHitVFX: {fileID: 4559021398028084413, guid: 77d9599b77e6d421789519aed84e233c, type: 3}
+  terrain: {fileID: 0}
   enemyWorth: 15
   hitPoint: 30
-  damageDealt: 30
+  deathSound: {fileID: 8300000, guid: d3247579c549643a5b3a95f9224eaf3c, type: 3}
 --- !u!1 &463791956951111882
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ TagManager:
   - Static Enemy
   - HeavyWeapon
   - LightWeapon
+  - HeavyEnemy
+  - Tank
   layers:
   - Default
   - TransparentFX

@@ -19,10 +19,15 @@ public class ShootingControls : MonoBehaviour
     GameObject [] activeWeapons;
     public HudController hudController;
 
-    float fireDelay = 0.200f;
+    //Sound Delays
+    float fireLightDelay = 0.200f;
+    float fireHeavyDelay = 0.250f;
     float fireTime = 0.0f;
+
+    //Firing stop delays
     float fireBurstTime = 0.0f;
-    float fireBurstDelay = 0.3f;
+    float fireLightBurstDelay = 0.3f;
+    float fireHeavyBurstDelay = 0.15f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,8 +36,7 @@ public class ShootingControls : MonoBehaviour
         hudController.heavyWeaponSelected = this.heavyWeaponSelected;
         activeWeapons = lightWeapon;
         StopAllEmission();
-        hudController.LightHUDActivate();  
-        selectedGunSound = lightGunSound;    
+        hudController.LightHUDActivate();     
     }
 
     // Update is called once per frame
@@ -63,22 +67,42 @@ public class ShootingControls : MonoBehaviour
             ParticleSystem particleSystem = item.GetComponent<ParticleSystem>();
             var emission = particleSystem.emission;
             if(state){
-                emission.enabled = true;
-                fireBurstTime = Time.time + fireBurstDelay;
+
+                if(activeWeapons == lightWeapon)
+                {
+                    emission.enabled = true;
+                    fireBurstTime = Time.time + fireLightBurstDelay;
+                }
+                else if(activeWeapons == heavyWeapon)
+                {
+                    emission.enabled = true;
+                    fireBurstTime = Time.time + fireHeavyBurstDelay;
+                }
+                
             }
-            if(!state && Time.time > fireBurstTime){
-                emission.enabled = false;
+            else{
+                if(Time.time > fireBurstTime){
+                    emission.enabled = false;
+                }
             }
             
         }
-
+        //Sound Controls
         if(state){
             if(Time.time > fireTime)
             {
-                lightGunSound.pitch = Random.Range(0.93f, 1.02f);
-                lightGunSound.volume = Random.Range(0.90f, 1.10f);
-                lightGunSound.Play();
-                fireTime = Time.time + fireDelay;
+                if(activeWeapons == lightWeapon){
+                    lightGunSound.volume = Random.Range(0.30f, 0.32f);
+                    lightGunSound.pitch = Random.Range(0.95f, 1.03f);
+                    lightGunSound.Play();
+                    fireTime = Time.time + fireLightDelay;
+                }
+                else if(activeWeapons == heavyWeapon){
+                    heavyGunSound.volume = Random.RandomRange(0.38f, 0.42f);
+                    heavyGunSound.pitch = Random.RandomRange(0.95f, 1.03f);
+                    heavyGunSound.Play();
+                    fireTime = Time.time + fireHeavyDelay;
+                }
             }  
             
         } 
@@ -93,7 +117,6 @@ public class ShootingControls : MonoBehaviour
             StopAllEmission();
             activeWeapons = lightWeapon;
             hudController.LightHUDActivate();
-            selectedGunSound = lightGunSound;
         }
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -102,7 +125,6 @@ public class ShootingControls : MonoBehaviour
             StopAllEmission();
             activeWeapons = heavyWeapon;
             hudController.HeavyHUDActivate();
-            selectedGunSound = heavyGunSound;
         }
     }
 
