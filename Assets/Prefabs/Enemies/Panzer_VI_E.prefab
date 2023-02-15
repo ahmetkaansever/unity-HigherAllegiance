@@ -285,8 +285,8 @@ MonoBehaviour:
   tankDeathVFX: {fileID: 8571613637118734641, guid: c93c261d33b3c0242b8957b65ee0205b, type: 3}
   destroyedTank: {fileID: 7560253949228694589, guid: 260375251fa9f0a49ae793c5a5f6669a, type: 3}
   terrain: {fileID: 0}
-  enemyWorth: 15
-  hitPoint: 100
+  enemyWorth: 25
+  hitPoint: 90
   deathSound: {fileID: 3779963990163104802}
   volume: 0.5
 --- !u!82 &3779963990163104802

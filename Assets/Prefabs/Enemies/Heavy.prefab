@@ -148,10 +148,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100006, guid: a5f2c44d460aa584a925f955c093a24a, type: 3}
   lightHitVFX: {fileID: 4559021398028084413, guid: 77d9599b77e6d421789519aed84e233c, type: 3}
+  tankDeathVFX: {fileID: 0}
+  destroyedTank: {fileID: 0}
   terrain: {fileID: 0}
-  enemyWorth: 15
+  enemyWorth: 25
   hitPoint: 500
   deathSound: {fileID: 8300000, guid: d3247579c549643a5b3a95f9224eaf3c, type: 3}
+  volume: 0.5
 --- !u!95 &1447557223
 Animator:
   serializedVersion: 5

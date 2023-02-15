@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 466792253387630220}
   - component: {fileID: 462391464999575012}
+  - component: {fileID: 5869974201079856123}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -132,10 +133,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100006, guid: a5f2c44d460aa584a925f955c093a24a, type: 3}
   lightHitVFX: {fileID: 4559021398028084413, guid: 77d9599b77e6d421789519aed84e233c, type: 3}
+  tankDeathVFX: {fileID: 0}
+  destroyedTank: {fileID: 0}
   terrain: {fileID: 0}
   enemyWorth: 15
   hitPoint: 30
   deathSound: {fileID: 8300000, guid: d3247579c549643a5b3a95f9224eaf3c, type: 3}
+  volume: 0.5
+--- !u!65 &5869974201079856123
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463462309046175588}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.188599, y: 1.7485199, z: 9.868378}
+  m_Center: {x: 0.22366333, y: 0.095466614, z: 0.028686523}
 --- !u!1 &463791956951111882
 GameObject:
   m_ObjectHideFlags: 0

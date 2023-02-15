@@ -38,6 +38,7 @@ public class PlayerControls : MonoBehaviour
     {
         CalculateTranslation();
         CalculateRotation();
+        ProcessMenuKeys();
 
     }
 
@@ -66,5 +67,20 @@ public class PlayerControls : MonoBehaviour
         float roll = xThrow * rollThrowFactor;
         Quaternion targetRotation = Quaternion.Euler(pitch, yaw, roll);
         transform.localRotation = Quaternion.RotateTowards(transform.localRotation, targetRotation, rotationFactor);
+    }
+
+    private void ProcessMenuKeys()
+    {
+        if(Input.GetKeyDown(KeyCode.R)){
+            Invoke("ReloadLevel", 0.5f);
+        }
+    }
+
+
+
+    void ReloadLevel()
+    {
+        int currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(currentSceneIndex);
     }
 }
