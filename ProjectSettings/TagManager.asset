@@ -11,6 +11,8 @@ TagManager:
   - LightWeapon
   - HeavyEnemy
   - Tank
+  - LightEnemy
+  - MediumEnemy
   layers:
   - Default
   - TransparentFX

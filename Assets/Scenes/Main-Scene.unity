@@ -224,6 +224,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Light (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 463462309046175588, guid: be57dfe65b91ccf47b39eb449e294c14, type: 3}
+      propertyPath: m_TagString
+      value: LightEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 466792253387630220, guid: be57dfe65b91ccf47b39eb449e294c14, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -675,6 +679,11 @@ Transform:
   m_Father: {fileID: 1879075789}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &429114550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5497388716509706041, guid: 2b058d4de38f645768c715691deb982b, type: 3}
+  m_PrefabInstance: {fileID: 5497388716825101796}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &475322688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,6 +1241,48 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5497388717347324726, guid: 2b058d4de38f645768c715691deb982b, type: 3}
   m_PrefabInstance: {fileID: 5497388716825101796}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &589530836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429114550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 3638083ea04dfa644b2a0309ac88bd90, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1317497217}
+          m_TargetAssemblyTypeName: LevelFinished, Assembly-CSharp
+          m_MethodName: ProcessLevelEnd
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 429114550}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &609097174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1250,6 +1301,10 @@ PrefabInstance:
     - target: {fileID: 463462309046175588, guid: be57dfe65b91ccf47b39eb449e294c14, type: 3}
       propertyPath: m_Name
       value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 463462309046175588, guid: be57dfe65b91ccf47b39eb449e294c14, type: 3}
+      propertyPath: m_TagString
+      value: LightEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 466792253387630220, guid: be57dfe65b91ccf47b39eb449e294c14, type: 3}
       propertyPath: m_RootOrder
@@ -1847,6 +1902,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Light
       objectReference: {fileID: 0}
+    - target: {fileID: 463462309046175588, guid: be57dfe65b91ccf47b39eb449e294c14, type: 3}
+      propertyPath: m_TagString
+      value: LightEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 466792253387630220, guid: be57dfe65b91ccf47b39eb449e294c14, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2147,6 +2206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Light
       objectReference: {fileID: 0}
+    - target: {fileID: 463462309046175588, guid: be57dfe65b91ccf47b39eb449e294c14, type: 3}
+      propertyPath: m_TagString
+      value: LightEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 466792253387630220, guid: be57dfe65b91ccf47b39eb449e294c14, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2395,6 +2458,10 @@ PrefabInstance:
     - target: {fileID: 3638881179468652382, guid: cbb49b6123402d7459e2aa93aaa25ab7, type: 3}
       propertyPath: m_Name
       value: Medium (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3638881179468652382, guid: cbb49b6123402d7459e2aa93aaa25ab7, type: 3}
+      propertyPath: m_TagString
+      value: MediumEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 4710213466640557605, guid: cbb49b6123402d7459e2aa93aaa25ab7, type: 3}
       propertyPath: terrain
@@ -3174,6 +3241,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Medium
       objectReference: {fileID: 0}
+    - target: {fileID: 3638881179468652382, guid: cbb49b6123402d7459e2aa93aaa25ab7, type: 3}
+      propertyPath: m_TagString
+      value: MediumEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4710213466640557605, guid: cbb49b6123402d7459e2aa93aaa25ab7, type: 3}
       propertyPath: terrain
       value: 
@@ -3439,6 +3510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Medium
       objectReference: {fileID: 0}
+    - target: {fileID: 3638881179468652382, guid: cbb49b6123402d7459e2aa93aaa25ab7, type: 3}
+      propertyPath: m_TagString
+      value: MediumEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4710213466640557605, guid: cbb49b6123402d7459e2aa93aaa25ab7, type: 3}
       propertyPath: volume
       value: 3
@@ -3615,6 +3690,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1317497216}
   - component: {fileID: 1317497215}
+  - component: {fileID: 1317497217}
   m_Layer: 0
   m_Name: Master Timeline
   m_TagString: Untagged
@@ -3639,6 +3715,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -5155648860702557136, guid: f13b3a86633f741bbb861404f7712cda, type: 2}
     value: {fileID: 589530834}
+  - key: {fileID: 910405692706178194, guid: f13b3a86633f741bbb861404f7712cda, type: 2}
+    value: {fileID: 589530836}
   m_ExposedReferences:
     m_References:
     - 57a7fb040876eca43afa339316d18e1b: {fileID: 2067357309}
@@ -3665,6 +3743,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1317497217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317497214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c039e4e13d2428b4d9255ec9ca153a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLightNo: 5
+  enemyMediumNo: 6
+  enemyHeavyNo: 1
 --- !u!1001 &1332440486
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3789,6 +3882,10 @@ PrefabInstance:
     - target: {fileID: 3638881179468652382, guid: cbb49b6123402d7459e2aa93aaa25ab7, type: 3}
       propertyPath: m_Name
       value: Medium
+      objectReference: {fileID: 0}
+    - target: {fileID: 3638881179468652382, guid: cbb49b6123402d7459e2aa93aaa25ab7, type: 3}
+      propertyPath: m_TagString
+      value: MediumEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 4710213466640557605, guid: cbb49b6123402d7459e2aa93aaa25ab7, type: 3}
       propertyPath: terrain
@@ -4608,6 +4705,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Light (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 463462309046175588, guid: be57dfe65b91ccf47b39eb449e294c14, type: 3}
+      propertyPath: m_TagString
+      value: LightEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 466792253387630220, guid: be57dfe65b91ccf47b39eb449e294c14, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4998,6 +5099,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Medium (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3638881179468652382, guid: cbb49b6123402d7459e2aa93aaa25ab7, type: 3}
+      propertyPath: m_TagString
+      value: MediumEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4710213466640557605, guid: cbb49b6123402d7459e2aa93aaa25ab7, type: 3}
       propertyPath: terrain
       value: 
@@ -5062,6 +5167,10 @@ PrefabInstance:
     - target: {fileID: 3638881179468652382, guid: cbb49b6123402d7459e2aa93aaa25ab7, type: 3}
       propertyPath: m_Name
       value: Medium
+      objectReference: {fileID: 0}
+    - target: {fileID: 3638881179468652382, guid: cbb49b6123402d7459e2aa93aaa25ab7, type: 3}
+      propertyPath: m_TagString
+      value: MediumEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 4710213466640557605, guid: cbb49b6123402d7459e2aa93aaa25ab7, type: 3}
       propertyPath: terrain

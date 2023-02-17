@@ -5,7 +5,7 @@ using TMPro;
 
 public class ScoreBoard : MonoBehaviour
 {
-    int score;
+    public static int score;
     TMP_Text scoreText;
 
     private void Start() 

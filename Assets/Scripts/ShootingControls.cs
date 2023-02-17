@@ -51,12 +51,10 @@ public class ShootingControls : MonoBehaviour
         if(Input.GetButton("Fire1"))
         {
             FireActiveWeapons(true);
-            Debug.Log("Fired one bullet");
         }
         else
         {
             FireActiveWeapons(false);
-            Debug.Log("Not firing");
         }
     }
 

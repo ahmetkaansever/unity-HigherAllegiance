@@ -74,6 +74,10 @@ public class PlayerControls : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R)){
             Invoke("ReloadLevel", 0.5f);
         }
+        else if(Input.GetKeyDown(KeyCode.N)){
+            int currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+            UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        }
     }
 
 
